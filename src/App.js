@@ -12,7 +12,6 @@ import { CartProvider } from "./Context/CartContext";
 import { ProductProvider } from "./Context/ProductContext";
 import CrudProductsContainer from "./Components/CrudProducts/CrudProduct";
 import Checkout from "./Components/Checkout/CheckOut";
-import Order from "./Components/Order/Order";
 
 
 
