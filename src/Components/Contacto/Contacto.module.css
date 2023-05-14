@@ -1,0 +1,98 @@
+.Contenedor {
+  margin-top: 200px;
+}
+
+.Contenedor h1 {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Contacto {
+  margin-top: 2rem;
+  
+}
+
+.Contacto h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color:  #cc6b15;
+  -webkit-text-stroke: 1px black;
+
+}
+
+.FormularioContactoContenedor {
+  text-align: left;
+  justify-content: center;
+  font-size: 1.4rem;
+  max-width: 40.75rem;
+  margin: 0 auto;
+  padding: 1rem;
+  border: 3px solid #cc6b15;
+  background-color: white;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: black;
+}
+.FormularioContactoContenedor label {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color:  #cc6b15;
+  -webkit-text-stroke: 1px black;
+}
+
+.email {
+  min-height: 1.5rem;
+  font-size: 14px;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  border: 2px outset black;
+  font-size: 0.875rem;
+  outline: none;
+}
+
+.textarea {
+  min-height: 6.25rem;
+  font-size: 14px;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  border: 2px outset black;
+  font-size: 0.875rem;
+  outline: none;
+}
+
+.SubmitBoton {
+  padding: 1.3em 3em;
+  margin: 1em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  display: grid;
+  color: #000;
+  background-color: #cc6b15;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.SubmitBoton:hover {
+  background-color: #cc6b15;
+  box-shadow: 0px 15px 20px rgba(224, 119, 22, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.SubmitBoton:active {
+  transform: translateY(-1px);
+}

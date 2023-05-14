@@ -1,0 +1,57 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow:
+
+
+
+  <div className={styles.Contenedor}>
+             <section className={styles.Contacto}>
+      <h2>Contactanos</h2>
+      <div className={styles.FormularioContactoContenedor}>
+        <div className={styles.FormularioContacto}>
+          <form action="https://formspree.io/f/xjvdgrpj" method="POST">
+            <div>
+              <label for="name">Nombre:  </label>
+              <input
+                type="text"
+                name="sender-name"
+                placeholder="Escribe tu nombre"
+                className= {styles.textarea}
+                required
+              />
+            </div>
+  
+
+            <div>
+              <label for="email">Correo Electrónico:  </label>
+              <input
+                type="email"
+                name="sender-email"
+                placeholder="Ingreso tu correo electrónico"
+                className={styles.textarea}
+                required
+              />
+            </div>
+            <div>
+              <label for="mensaje">Mensaje:  </label><br></br>
+              <textarea
+                id="mensaje"
+                cols="60"
+                rows="10"
+                placeholder="Escribe tu mensaje"
+                name="mensaje"
+                className={styles.textarea}
+                required
+              ></textarea>
+            </div>
+            <input
+              type="submit"
+              value="Enviar"
+              className={styles.SubmitBoton}
+            />
+
+          </form>
+        </div>
+      </div>
+    </section>
+        </div>

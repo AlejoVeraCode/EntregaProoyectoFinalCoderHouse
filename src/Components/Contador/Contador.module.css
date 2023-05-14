@@ -1,0 +1,46 @@
+.Contador {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Controles {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Number {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color:  #00ee30;
+  -webkit-text-stroke: 1px black;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.Button {
+  padding: 1.3em 3em;
+  margin: 1em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #cc6b15;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.Button:hover {
+  background-color: #cc6b15;
+  box-shadow: 0px 15px 20px rgba(224, 119, 22, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.Button:active {
+  transform: translateY(-1px);
+}
