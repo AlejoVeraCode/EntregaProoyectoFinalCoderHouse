@@ -10,7 +10,6 @@ import Contacto from "./Components/Contacto/Contacto";
 import Cart from "./Components/Cart/Cart"
 import { CartProvider } from "./Context/CartContext";
 import { ProductProvider } from "./Context/ProductContext";
-//import CrudProducts from "./Components/CrudProducts/CrudProduct";
 import CrudProductsContainer from "./Components/CrudProducts/CrudProduct";
 import Checkout from "./Components/Checkout/CheckOut";
 import Order from "./Components/Order/Order";
