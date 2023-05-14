@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Pizzeria A Lo Pablo Ecommerce
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Pizzeria a lo Pablo es una tienda virtual de comida rapida, menús caseros y mucho mas, desarrollada en ReactJS y CSS
 
-## Available Scripts
+Pizzeria a lo Pablo es una rotiseria familiar que tiene 15 años en el mercado local donde puedes encontrar gran cantidad de productos, tales como pizzass, milanesas, hamburguesas, menus del dia y muy buenas promociones. La tienda te permite navegar por las diferentes categorías de productos, y agregarlos al carrito de compras. Además, puedes ver el detalle de cada producto, incluyendo su imagen, descripción y precio.
 
-In the project directory, you can run:
+## Instalacion
 
+Para instalar y ejecutar la aplicacion en tu máquina local, sigue los siguientes pasos:
+
+1- Clona el repositorio en tu máquina local: Install my-project with npm
+
+###  `git clone https://github.com/AlejoVeraCode/EntregaProoyectoFinalCoderHouse.git`
+
+2- Ingresa al directorio del proyecto:
+
+### `cd ecommerce`
+
+3- Instala las dependencias del proyecto:
+
+### `npm install`
+
+4- Ejecuta el servidor de desarrollo:
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+5- Abre http://localhost:3000 en tu navegador para ver la tienda.
 
-### `npm test`
+#Uso de la aplicacion
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Se inicia la aplicacion mostrando todos lo productos, puedes filtrarlos por categoria deseada y dentro del detalle de cada producto puedes seleccionar la cantidad que requieres, luego en el carrito de compras te mostrara todos los productos seleccionados con el total de la compra. al realizar el checkout se llenaran los datos para finalizar la compra y te mostrara en pantalla un codigo con el numero de orden del pedido. tambien puedes navegar entre las categoria "sobre Nosotros", "Eventos" y "Contacto" donde podra llenar un formulario con tu email y un mensaje para que nosotros lo contactemos por nuestros servicios.
 
-### `npm run build`
+#Derechos de autor
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Derechos de software © Alejo Vera, Todos los derechos reservados.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Este software está protegido por leyes de derechos de autor y tratados internacionales. Ninguna parte de este software puede ser reproducida, distribuida o transmitida de ninguna forma o por ningún medio, incluyendo photocopy, grabación u otros métodos electrónicos o mecánicos, sin la previa autorización por escrito del propietario del software.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Este software se proporciona "tal cual" y cualquier garantía expresa o implícita, incluyendo, pero no limitado a, las garantías implícitas de comercialización e idoneidad para un propósito particular, están expresamente exentas. En ningún caso el propietario del software será responsable de ningún daño directo, indirecto, incidental, especial, ejemplar o consecuente (incluyendo, pero no limitado a, la adquisición de bienes o servicios sustitutos; la pérdida de uso, datos o beneficios; o interrupción de negocios) sin importar la causa y bajo cualquier teoría de responsabilidad, ya sea en contrato, responsabilidad estricta o agravio (incluyendo negligencia o de otra manera) que surja de cualquier manera del uso de este software, incluso si se ha advertido de la posibilidad de tales daños.
