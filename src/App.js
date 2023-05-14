@@ -3,7 +3,6 @@ import Navbar from "./Components/Navbar/Navbar.js";
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer";
 import { BrowserRouter, Routes, Route, Router,} from "react-router-dom";
-import { redirect } from "react-router-dom";
 import SobreNosotros from "./Components/SobreNosotros/SobreNosotros";
 import Eventos from "./Components/Eventos/Eventos";
 import Contacto from "./Components/Contacto/Contacto";
