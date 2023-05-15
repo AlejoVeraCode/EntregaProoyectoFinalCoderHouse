@@ -6,7 +6,7 @@ Pizzeria a lo Pablo es una rotiseria familiar que tiene 15 años en el mercado l
 
 ## Navegacion
 Puede navegar a traves de la aplicacion en el sitio de Vercel.app en el siguiente enlace:
-https://entrega-prooyecto-final-coder-house-l0znwk6hg-alejoveracode.vercel.app/
+https://entrega-prooyecto-final-coder-house.vercel.app/
 
 ## Instalacion
 
