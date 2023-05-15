@@ -4,6 +4,10 @@ Pizzeria a lo Pablo es una tienda virtual de comida rapida, menús caseros y muc
 
 Pizzeria a lo Pablo es una rotiseria familiar que tiene 15 años en el mercado local donde puedes encontrar gran cantidad de productos, tales como pizzass, milanesas, hamburguesas, menus del dia y muy buenas promociones. La tienda te permite navegar por las diferentes categorías de productos, y agregarlos al carrito de compras. Además, puedes ver el detalle de cada producto, incluyendo su imagen, descripción y precio.
 
+## Navegacion
+Puede navegar a traves de la aplicacion en el sitio de Vercel.app en el siguiente enlace:
+https://entrega-prooyecto-final-coder-house-l0znwk6hg-alejoveracode.vercel.app/
+
 ## Instalacion
 
 Para instalar y ejecutar la aplicacion en tu máquina local, sigue los siguientes pasos:
