@@ -1,6 +1,5 @@
 import styles from "./Eventos.module.css";
-import eventos1 from "../Imagenes/Eventos-1.jpg";
-import eventos2 from "../Imagenes/Eventos-2.jpg";
+
 
 const Eventos = () => {
   return (
