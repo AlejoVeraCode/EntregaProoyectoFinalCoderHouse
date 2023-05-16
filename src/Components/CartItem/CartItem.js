@@ -1,7 +1,11 @@
 import styles from './CartItem.module.css'
+import { useContext } from 'react';
+import { CartContext } from '../../Context/CartContext';
 
 
 const CartItem =  ({id, precio, titulo})  => {
+  const { removeItem } = useContext(CartContext);
+
     return <div className={styles.Container}>
       <div className={styles.CardItem}>      <article className={styles.ProductCard}>
       <header>
@@ -10,6 +14,9 @@ const CartItem =  ({id, precio, titulo})  => {
       <section>
         <p>Precio: ${precio}</p>
       </section>
+      <button className={styles.ClearButton} onClick={() => removeItem(id)}>
+  X
+</button>
     </article>
     </div>
     </div> 
