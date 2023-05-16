@@ -1,117 +1,111 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../../Context/CartContext";
 import { db } from "../../Config/firebase_config";
-import { Link } from "react-router-dom";
 import {
   collection,
-  documentId,
   getDocs,
   query,
   where,
+  documentId,
   addDoc,
-  getDoc,
-  doc,
-  Timestamp, writeBatch
+  Timestamp,
+  writeBatch,
 } from "firebase/firestore";
 import CheckOutForm from "../CheckOutForm/CheckOutForm";
+import { Link } from "react-router-dom";
+import styles from "./CheckOut.module.css";
 
-const Checkout = () => {
+function Checkout() {
   const [loading, setLoading] = useState(false);
   const [orderId, setOrderId] = useState("");
-  const [redirectToOrder, setRedirectToOrder] = useState(false);
+  const { cart, clearCart, totalQuantity, total } = useContext(CartContext);
 
-  const { cart, total, clearCart, totalQuantity } = useContext(CartContext);
- // console.log(cart);
-
- const createOrder = async ({ nombre, telefono, direccion, email }) => {
+  const createOrder = async ({ nombre, telefono, direccion, email }) => {
     setLoading(true);
-  
     try {
-      const orderIdsRef = doc(db, "orders");
-      const orderIdsDoc = await getDoc(orderIdsRef);
-      const lastOrderId = orderIdsDoc.data().lastId;
-  
-     
-      const newOrderId = lastOrderId + 1;
-  
       const objOrder = {
-        id: newOrderId, 
-        buyer: {
-          nombre,
-          telefono,
-          direccion,
-          email,
-        },
+        buyer: { nombre, telefono, direccion, email },
         items: cart,
-        total: totalQuantity,
+        total: totalQuantity(),
         date: Timestamp.fromDate(new Date()),
       };
 
       const batch = writeBatch(db);
-
       const outOfStock = [];
 
-      const ids = cart.map(prod => prod.id);
+      const ids = cart.map((prod) => prod.id);
+      const productsRef = collection(db, "products");
+      const productsAddedFromFirestore = await getDocs(
+        query(productsRef, where(documentId(), "in", ids))
+      );
 
-      const productsRef = collection(db, 'products');
+      productsAddedFromFirestore.docs.forEach((doc) => {
+        const dataDoc = doc.data();
+        const stockDb = dataDoc.stock;
 
-      const productsAddedFromFirestore = await getDocs(query(productsRef, where(documentId(), 'in', ids)));
+        const productAddedToCart = cart.find((prod) => prod.id === doc.id);
+        const prodQuantity = productAddedToCart?.quantity;
 
-      const { docs } = productsAddedFromFirestore;
-
-      docs.forEach(doc => {
-          const dataDoc = doc.data();
-          const stockDb = dataDoc.stock;
-
-          const productAddedToCart = cart.find(prod => prod.id === doc.id);
-          const prodQuantity = productAddedToCart?.quantity;
-
-          if(stockDb >= prodQuantity){
-              batch.update(doc.ref, { stock: stockDb - prodQuantity });
-          } else {
-              outOfStock.push({ id: doc.id, ...dataDoc });
-          }   
-
+        if (stockDb >= prodQuantity) {
+          batch.update(doc.ref, { stock: stockDb - prodQuantity });
+        } else {
+          outOfStock.push({ id: doc.id, ...dataDoc });
+        }
       });
 
-      if(outOfStock.length === 0){
-          await batch.commit();
+      if (outOfStock.length === 0) {
+        await batch.commit();
+        const orderRef = collection(db, "orders");
+        const orderAdded = await addDoc(orderRef, objOrder);
 
-          const orderRef = collection(db, 'orders');
-
-          const orderAdded = await addDoc(orderRef, objOrder);
-
-          setOrderId(orderAdded.id);
-          clearCart();
-
+        setOrderId(orderAdded.id);
+        clearCart();
       } else {
-          console.error('Hay productos que están fuera de stock');
+        console.error("Hay productos que estan fuera de stock");
       }
-
-  } catch(error){
+    } catch (error) {
       console.log(error);
-
-  } finally {
+    } finally {
       setLoading(false);
-  }
-}
-    if (loading) {
-      return <h1>Estamos generando su orden...</h1>;
     }
-   
-    if (orderId) {
-      return <h1>El id de su orden es:{orderId}</h1>;
-    }
-    if (redirectToOrder) {
-        return <Link to={`/order/${orderId}`}/>
-      }
-
-    return (
-      <div>
-        <h1>CheckOut</h1>
-        <CheckOutForm onConfirm={createOrder} />
-      </div>
-    );
   };
 
-export default Checkout
+  if (loading) {
+    return <h1 className={styles.OrderId}>Estamos generando su orden...</h1>;
+  }
+
+  if (orderId) {
+    return (
+      <div className={styles.OrderId}>
+        <h1>El id de su orden es: {orderId}</h1>
+        <br />
+        <Link className={styles.Button} to="/">
+          Volver a productos
+        </Link>
+      </div>
+    );
+  }
+
+  return (
+    <div className={styles.OrderId}>
+      <h1>CheckOut</h1>
+      <div className={styles.OrderCard}>
+        <h2>Resumen de compra</h2>
+        {cart.map(({ id, titulo, precio, quantity }) => (
+          <div key={id}>
+            <p>
+              {titulo} x {quantity} = {precio * quantity}
+            </p>
+            <p>Cantidad: {quantity}</p>
+            <p>Precio unitario: ${precio}</p>
+            <hr />
+          </div>
+        ))}
+        <h3>Total: ${total}</h3>
+      </div>
+      <CheckOutForm onConfirm={createOrder} />
+    </div>
+  );
+}
+
+export default Checkout;
