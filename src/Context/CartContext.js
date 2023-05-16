@@ -41,10 +41,14 @@ export const CartProvider = ({children}) => {
       );
 
     const totalQuantity = () => {
-        let cantidad = 0;
-        cart.forEach((item) => cantidad += item.cantidad)
-        return cantidad;
-    };
+        let quantity = 0;
+        cart.forEach(item => {
+          if (!isNaN(item.quantity)) {
+            quantity += item.quantity;
+          }
+        });
+        return quantity;
+      }
 
     return (
         <CartContext.Provider value={{cart, addItem, removeItem, clearCart, total, totalQuantity, loading}}>
